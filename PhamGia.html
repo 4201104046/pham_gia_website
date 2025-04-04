@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phạm Gia - Dịch vụ Thiết kế & Xây dựng Chuyên nghiệp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #f59e0b;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">PG</div>
+                    <a href="#" class="text-2xl font-bold text-gray-800">PHẠM <span class="text-amber-500">GIA</span></a>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-800 hover:text-amber-500 transition">Trang chủ</a>
+                    <a href="#services" class="nav-link text-gray-800 hover:text-amber-500 transition">Dịch vụ</a>
+                    <a href="#projects" class="nav-link text-gray-800 hover:text-amber-500 transition">Dự án</a>
+                    <a href="#about" class="nav-link text-gray-800 hover:text-amber-500 transition">Về chúng tôi</a>
+                    <a href="#contact" class="nav-link text-gray-800 hover:text-amber-500 transition">Liên hệ</a>
+                </nav>
+                
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-800 hover:text-amber-500 transition">Trang chủ</a>
+                <a href="#services" class="block py-2 text-gray-800 hover:text-amber-500 transition">Dịch vụ</a>
+                <a href="#projects" class="block py-2 text-gray-800 hover:text-amber-500 transition">Dự án</a>
+                <a href="#about" class="block py-2 text-gray-800 hover:text-amber-500 transition">Về chúng tôi</a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-amber-500 transition">Liên hệ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">THIẾT KẾ & XÂY DỰNG <span class="text-amber-400">ĐẲNG CẤP</span></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Phạm Gia - Đồng hành cùng bạn biến ý tưởng thành không gian sống hoàn hảo với chất lượng vượt trội và dịch vụ chuyên nghiệp.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Liên hệ ngay</a>
+                <a href="#projects" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Xem dự án</a>
+            </div>
+            <div class="mt-16 animate-bounce-slow">
+                <a href="#services" class="text-white">
+                    <i class="fas fa-chevron-down text-3xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">DỊCH VỤ <span class="text-amber-500">CỦA CHÚNG TÔI</span></h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">Với đội ngũ kiến trúc sư và kỹ sư giàu kinh nghiệm, chúng tôi cung cấp các giải pháp toàn diện cho mọi công trình.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-home text-6xl text-amber-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Thiết kế kiến trúc</h3>
+                        <p class="text-gray-600 mb-4">Sáng tạo không gian sống độc đáo, phù hợp với nhu cầu và phong cách của từng khách hàng.</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-2"></i> Thiết kế nhà phố, biệt thự</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-2"></i> Thiết kế nội thất</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-2"></i> Thiết kế cảnh quan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-building text-6xl text-amber-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Xây dựng công trình</h3>
+                        <p class="text-gray-600 mb-4">Thi công chất lượng cao với quy trình chuyên nghiệp, đảm bảo tiến độ và an toàn lao động.</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-2"></i> Xây dựng nhà dân dụng</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-2"></i> Xây dựng công trình thương mại</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-2"></i> Cải tạo, sửa chữa nhà</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-tools text-6xl text-amber-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Giám sát thi công</h3>
+                        <p class="text-gray-600 mb-4">Đảm bảo chất lượng công trình từng giai đoạn với đội ngũ giám sát chuyên nghiệp.</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-2"></i> Giám sát chất lượng vật tư</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-2"></i> Kiểm tra tiến độ thi công</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-2"></i> Báo cáo định kỳ cho chủ đầu tư</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contact" class="inline-block bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Yêu cầu tư vấn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">DỰ ÁN <span class="text-amber-500">TIÊU BIỂU</span></h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">Những công trình đã tạo nên thương hiệu Phạm Gia trong suốt nhiều năm qua.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Biệt thự Vinhomes</h3>
+                        <p class="text-gray-600 mb-4">Thiết kế và thi công biệt thự 3 tầng với phong cách hiện đại tại khu đô thị Vinhomes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Hà Nội</span>
+                            <span class="text-sm text-gray-500"><i class="fas fa-calendar-alt mr-1"></i> 2022</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Nhà hàng The Gourmet</h3>
+                        <p class="text-gray-600 mb-4">Thiết kế nội thất và thi công nhà hàng cao cấp với concept ẩm thực châu Âu.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> TP.HCM</span>
+                            <span class="text-sm text-gray-500"><i class="fas fa-calendar-alt mr-1"></i> 2021</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Căn hộ cao cấp Sunshine</h3>
+                        <p class="text-gray-600 mb-4">Thiết kế nội thất căn hộ 2 phòng ngủ với phong cách tối giản hiện đại.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Đà Nẵng</span>
+                            <span class="text-sm text-gray-500"><i class="fas fa-calendar-alt mr-1"></i> 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contact" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Xem thêm dự án</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">VỀ <span class="text-amber-500">PHẠM GIA</span></h2>
+                    <div class="w-20 h-1 bg-amber-500 mb-6"></div>
+                    <p class="text-gray-600 mb-6">Với hơn 10 năm kinh nghiệm trong lĩnh vực thiết kế và xây dựng, Phạm Gia tự hào là đơn vị tiên phong mang đến những giải pháp kiến trúc sáng tạo, chất lượng thi công vượt trội.</p>
+                    <p class="text-gray-600 mb-8">Chúng tôi cam kết mang đến cho khách hàng những công trình hoàn hảo nhất, đáp ứng mọi yêu cầu về thẩm mỹ, công năng và ngân sách.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check-circle text-amber-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Đội ngũ chuyên gia</h4>
+                                <p class="text-gray-600">Kiến trúc sư, kỹ sư giàu kinh nghiệm, sáng tạo và tận tâm.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check-circle text-amber-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Quy trình chuyên nghiệp</h4>
+                                <p class="text-gray-600">Làm việc khoa học, minh bạch từ khâu tư vấn đến bàn giao.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check-circle text-amber-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Chất lượng vượt trội</h4>
+                                <p class="text-gray-600">Sử dụng vật liệu cao cấp, đảm bảo độ bền và tính thẩm mỹ.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 relative">
+                    <div class="bg-gray-200 h-96 rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="About Phạm Gia" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-amber-500 text-white p-6 rounded-lg shadow-lg w-2/3">
+                        <h3 class="text-xl font-bold mb-2">10+ năm kinh nghiệm</h3>
+                        <p class="text-sm">Thiết kế và thi công hàng trăm công trình trên khắp cả nước</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">KHÁCH HÀNG <span class="text-amber-400">NÓI VỀ CHÚNG TÔI</span></h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-6 text-gray-300 max-w-2xl mx-auto">Những phản hồi chân thực từ khách hàng đã tin tưởng và lựa chọn Phạm Gia.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Chị Nguyễn Thị Hương</h4>
+                            <p class="text-amber-400">Chủ biệt thự Vinhomes</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Phạm Gia đã giúp chúng tôi hiện thực hóa ngôi nhà mơ ước. Từ thiết kế đến thi công đều rất chuyên nghiệp, chất lượng vượt ngoài mong đợi. Đặc biệt là đội ngũ kỹ sư luôn nhiệt tình hỗ trợ."</p>
+                    <div class="mt-4 text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Anh Trần Văn Minh</h4>
+                            <p class="text-amber-400">Chủ nhà hàng The Gourmet</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Tôi rất ấn tượng với khả năng nắm bắt ý tưởng và phong cách của đội ngũ Phạm Gia. Nhà hàng của tôi được thiết kế đúng như mong muốn, tạo được dấu ấn riêng và thu hút rất nhiều khách hàng."</p>
+                    <div class="mt-4 text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Chị Lê Thị Hồng</h4>
+                            <p class="text-amber-400">Chủ căn hộ Sunshine</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Căn hộ của tôi được Phạm Gia thiết kế nội thất theo phong cách tối giản mà tôi yêu thích. Mọi chi tiết đều được chăm chút tỉ mỉ, vật liệu chất lượng cao. Tôi hoàn toàn hài lòng với dịch vụ của họ."</p>
+                    <div class="mt-4 text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-amber-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">150+</div>
+                    <div class="text-lg">Dự án hoàn thành</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">50+</div>
+                    <div class="text-lg">Khách hàng thân thiết</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">25+</div>
+                    <div class="text-lg">Kiến trúc sư</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">10+</div>
+                    <div class="text-lg">Năm kinh nghiệm</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">LIÊN HỆ <span class="text-amber-500">PHẠM GIA</span></h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">Hãy để lại thông tin, chúng tôi sẽ liên hệ tư vấn miễn phí và báo giá chi tiết trong thời gian sớm nhất.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Họ và tên</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Số điện thoại</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Dịch vụ quan tâm</label>
+                            <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                                <option value="">Chọn dịch vụ</option>
+                                <option value="design">Thiết kế kiến trúc</option>
+                                <option value="construction">Xây dựng công trình</option>
+                                <option value="supervision">Giám sát thi công</option>
+                                <option value="other">Dịch vụ khác</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Nội dung yêu cầu</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Gửi yêu cầu</button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2 lg:pl-12">
+                    <div class="bg-gray-100 p-8 rounded-lg h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Thông tin liên hệ</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-amber-500 text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Địa chỉ</h4>
+                                    <p class="text-gray-600">Số 123, đường ABC, quận XYZ, TP. Hà Nội</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-500 text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Điện thoại</h4>
+                                    <p class="text-gray-600">0243.123.4567 - Hotline: 0904.123.456</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-500 text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                    <p class="text-gray-600">info@phamgia.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-500 text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Giờ làm việc</h4>
+                                    <p class="text-gray-600">Thứ 2 - Thứ 7: 8h00 - 18h00</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Theo dõi chúng tôi</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-800 text-white p-3 rounded-full hover:bg-amber-500 transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 text-white p-3 rounded-full hover:bg-amber-500 transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 text-white p-3 rounded-full hover:bg-amber-500 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 text-white p-3 rounded-full hover:bg-amber-500 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.096866647462!2d105.78010841488348!3d21.02882078599851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86cece9ac1%3A0xa1e792a9e7e5c7e5!2zMTIzIFBo4buRIEFuIEQuLCBU4burIExpw6F1LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1629981441217!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">PG</div>
+                        <a href="#" class="text-xl font-bold">PHẠM <span class="text-amber-500">GIA</span></a>
+                    </div>
+                    <p class="text-gray-400 mb-4">Đơn vị thiết kế và xây dựng uy tín hàng đầu tại Việt Nam.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Dịch vụ</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Thiết kế kiến trúc</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Xây dựng công trình</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Giám sát thi công</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Thiết kế nội thất</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Cải tạo nhà ở</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Liên kết</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-500 transition">Trang chủ</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-amber-500 transition">Dịch vụ</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-amber-500 transition">Dự án</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-500 transition">Về chúng tôi</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-500 transition">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Liên hệ</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-amber-500"></i>
+                            <span>Số 123, đường ABC, quận XYZ, TP. Hà Nội</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-amber-500"></i>
+                            <span>0243.123.4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-amber-500"></i>
+                            <span>info@phamgia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Phạm Gia. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-amber-500 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send this data to a server
+            // For demo purposes, we'll just show an alert
+            alert(`Cảm ơn ${name} đã gửi yêu cầu!\nChúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
