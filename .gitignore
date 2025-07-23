@@ -1,0 +1,22 @@
+# Visual Studio user-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+
+# VS Code settings (nếu dùng)
+.vscode/
+
+# Others
+*.db
+*.log
+*.cache
+*.tlog
+*.vsidx
